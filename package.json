@@ -1,0 +1,42 @@
+{
+  "author": "Christian Westgaard <cwe@enonic.com>",
+  "description": "A legacy JavaScript grid/spreadsheet",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cpy-cli": "^5.0.0",
+    "del-cli": "^5.1.0",
+    "slickgrid": "^4.0.1"
+  },
+  "files": [
+    "images/",
+    "lib/",
+    "LICENSE",
+    "*.css",
+    "*.js"
+  ],
+  "keywords": [
+    "enonic",
+    "legacy",
+    "slickgrid",
+    "grid"
+  ],
+  "license": "MIT",
+  "main": "slick.core.js",
+  "name": "@enonic/legacy-slickgrid",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:enonic-playground/npm-legacy-slickgrid.git"
+  },
+  "scripts": {
+    "clean": "del-cli images *.css *.tgz",
+    "copy": "concurrently -c auto -g --timings npm:copy:*",
+    "copy:css": "cpy 'node_modules/slickgrid/*.css' '.'",
+    "copy:images": "cpy 'node_modules/slickgrid/images/*.*' 'images/'",
+    "precopy": "npm run clean",
+    "prepack": "npm run copy"
+  },
+  "version": "0.0.1"
+}
