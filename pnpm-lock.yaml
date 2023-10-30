@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  jquery-ui-dist:
+    specifier: ^1.13.2
+    version: 1.13.2
+
 devDependencies:
   concurrently:
     specifier: ^8.2.2
@@ -14,6 +19,9 @@ devDependencies:
   del-cli:
     specifier: ^5.1.0
     version: 5.1.0
+  jquery:
+    specifier: ^3.7.1
+    version: 3.7.1
   slickgrid:
     specifier: ^4.0.1
     version: 4.0.3
@@ -508,6 +516,14 @@ packages:
     resolution: {integrity: sha512-yvkRyxmFKEOQ4pNXCmJG5AEQNlXJS5LaONXo5/cLdTZdWvsZ1ioJEonLGAosKlMWE8lwUy/bJzMjcw8az73+Fg==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /jquery-ui-dist@1.13.2:
+    resolution: {integrity: sha512-oVDRd1NLtTbBwpRKAYdIRgpWVDzeBhfy7Gu0RmY6JEaZtmBq6kDn1pm5SgDiAotrnDS+RoTRXO6xvcNTxA9tOA==}
+    dependencies:
+      jquery: 3.7.1
+
+  /jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

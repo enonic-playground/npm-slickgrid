@@ -23,6 +23,10 @@
   "license": "MIT",
   "main": "slick.core.js",
   "name": "@enonic/legacy-slickgrid",
+  "peerDependencies": {
+    "jquery": "^3.7.1",
+    "jquery-ui-dist": "^1.13.2"
+  },
   "publishConfig": {
     "access": "public"
   },
