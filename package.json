@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:enonic-playground/npm-legacy-slickgrid.git"
+    "url": "git+ssh://git@github.com:enonic/npm-legacy-slickgrid.git"
   },
   "scripts": {
     "clean": "del-cli images *.css *.tgz",
