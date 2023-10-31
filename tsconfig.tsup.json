@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    // "types": []
+  },
+  "include": [
+    "index.ts"
+  ]
+}

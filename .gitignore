@@ -1,4 +1,6 @@
 /*.css
 /enonic-legacy-slickgrid-*.tgz
 /images/
+/index.js
+/index.js.map
 /node_modules/
