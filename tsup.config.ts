@@ -19,6 +19,7 @@ export default defineConfig(() => {
     platform: 'browser',
     splitting: false,
     sourcemap: process.env.NODE_ENV === 'development' ? false : true,
+    target: 'ES5',
     tsconfig: 'tsconfig.tsup.json',
   };
 });
