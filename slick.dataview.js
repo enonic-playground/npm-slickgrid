@@ -691,8 +691,8 @@
             var accumulatorInfo = getFunctionInfo(aggregator.accumulate);
             var fn = new Function(
                 "_items",
-                "for (var " + accumulatorInfo.params[0] + ", _i=0, _il=_items.length; _i<_il; _i++) {" +
-                accumulatorInfo.params[0] + " = _items[_i]; " +
+                "for (var " + accumulatorInfo.params[0] + ", _j=0, _il=_items.length; _j<_il; _j++) {" +
+                accumulatorInfo.params[0] + " = _items[_j]; " +
                 accumulatorInfo.body +
                 "}"
             );
@@ -721,8 +721,8 @@
                 "var _retval = [], _idx = 0; ",
                 "var $item$, $args$ = _args; ",
                 "_coreloop: ",
-                "for (var _i = 0, _il = _items.length; _i < _il; _i++) { ",
-                "$item$ = _items[_i]; ",
+                "for (var _j = 0, _il = _items.length; _j < _il; _j++) { ",
+                "$item$ = _items[_j]; ",
                 "$filter$; ",
                 "} ",
                 "return _retval; "
@@ -741,7 +741,7 @@
             var filterInfo = getFunctionInfo(filter);
 
             var filterPath1 = "{ continue _coreloop; }$1";
-            var filterPath2 = "{ _cache[_i] = true;_retval[_idx++] = $item$; continue _coreloop; }$1";
+            var filterPath2 = "{ _cache[_j] = true;_retval[_idx++] = $item$; continue _coreloop; }$1";
             // make some allowances for minification - there's only so far we can go with RegEx
             var filterBody = filterInfo.body
                 .replace(/return false\s*([;}]|\}|$)/gi, filterPath1)
@@ -749,7 +749,7 @@
                 .replace(/return true\s*([;}]|\}|$)/gi, filterPath2)
                 .replace(/return!0([;}]|\}|$)/gi, filterPath2)
                 .replace(/return ([^;}]+?)\s*([;}]|$)/gi,
-                    "{ if ((_cache[_i] = $1)) { _retval[_idx++] = $item$; }; continue _coreloop; }$2");
+                    "{ if ((_cache[_j] = $1)) { _retval[_idx++] = $item$; }; continue _coreloop; }$2");
 
             // This preserves the function template code after JS compression,
             // so that replace() commands still work as expected.
@@ -758,9 +758,9 @@
                 "var _retval = [], _idx = 0; ",
                 "var $item$, $args$ = _args; ",
                 "_coreloop: ",
-                "for (var _i = 0, _il = _items.length; _i < _il; _i++) { ",
-                "$item$ = _items[_i]; ",
-                "if (_cache[_i]) { ",
+                "for (var _j = 0, _il = _items.length; _j < _il; _j++) { ",
+                "$item$ = _items[_j]; ",
+                "if (_cache[_j]) { ",
                 "_retval[_idx++] = $item$; ",
                 "continue _coreloop; ",
                 "} ",
